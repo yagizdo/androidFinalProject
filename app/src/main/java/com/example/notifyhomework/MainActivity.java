@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Calendar.HOUR_OF_DAY < 14 && Calendar.HOUR_OF_DAY > 16) {
-
-
         NotificationManager bildirimYonet =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         Intent ıntent = new Intent(MainActivity.this,KarsilamaEkraniActivity.class);
@@ -96,11 +93,6 @@ public class MainActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calender.getTimeInMillis(),900000 ,gidilecekBroadcast);
-
-        } else {
-
-            alarmManager.cancel(pendingIntent);
-        }
 
     }
 
